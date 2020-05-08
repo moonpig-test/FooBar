@@ -1,0 +1,8 @@
+on: [repository_dispatch]
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+    - id: test
+      run: 'echo "Foo field is: ${{ github.event.client_payload.foo }}"'
