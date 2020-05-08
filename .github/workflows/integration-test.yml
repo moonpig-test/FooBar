@@ -4,5 +4,7 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-    - id: test
+    - id: show-payload
+      run: 'echo "payload: ${{ toJson(github.event.client_payload) }}"'
+    - id: show-field
       run: 'echo "Foo field is: ${{ github.event.client_payload.foo }}"'
